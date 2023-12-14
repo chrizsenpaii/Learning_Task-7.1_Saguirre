@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Items Drawing</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<a href ="index.html"><p> go to part 1</p></a>
+    <canvas id="myCanvas" width="800" height="200"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Draw a smiley face
+        ctx.beginPath();
+        ctx.arc(100, 100, 80, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(75, 80, 10, 0, 2 * Math.PI);
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(125, 80, 10, 0, 2 * Math.PI);
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(100, 95);
+        ctx.lineTo(90, 115);
+        ctx.lineTo(110, 115);
+        ctx.closePath();
+        ctx.fillStyle = "orange";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(100, 130, 40, 0.2 * Math.PI, 0.8 * Math.PI);
+        ctx.lineWidth = 4;
+        ctx.stroke();
+
+        // Draw a car
+        ctx.beginPath();
+        ctx.moveTo(250, 150);
+        ctx.lineTo(350, 150);
+        ctx.lineTo(350, 130);
+        ctx.lineTo(330, 110);
+        ctx.lineTo(270, 110);
+        ctx.lineTo(250, 130);
+        ctx.closePath();
+        ctx.fillStyle = "blue";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(270, 150, 20, 0, 2 * Math.PI);
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(330, 150, 20, 0, 2 * Math.PI);
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        // Draw a butterfly
+        ctx.beginPath();
+        ctx.moveTo(450, 80);
+        ctx.lineTo(450, 120);
+        ctx.strokeStyle = "pink";
+        ctx.lineWidth = 10;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(450, 100);
+        ctx.lineTo(410, 80);
+        ctx.lineTo(410, 120);
+        ctx.closePath();
+        ctx.fillStyle = "purple";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(450, 100);
+        ctx.lineTo(490, 80);
+        ctx.lineTo(490, 120);
+        ctx.closePath();
+        ctx.fillStyle = "purple";
+        ctx.fill();
+
+        // Draw a soccer ball
+        ctx.beginPath();
+        ctx.arc(650, 100, 80, 0, 2 * Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(650, 100, 30, 0, 2 * Math.PI);
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([5, 5]);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(650, 100, 10, 0, 2 * Math.PI);
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        for (var i = 0; i < 360; i += 60) {
+            var x = 650 + 60 * Math.cos(i * Math.PI / 180);
+            var y = 100 + 60 * Math.sin(i * Math.PI / 180);
+            ctx.beginPath();
+            ctx.arc(x, y, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = "black";
+            ctx.fill();
+        }
+    </script>
+</body>
+</html>

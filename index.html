@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Items Drawing</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<a href ="sample.html"><p> go to part 2</p></a>
+    <canvas id="myCanvas" width="800" height="200"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Draw a sun with rays
+        ctx.beginPath();
+        ctx.arc(100, 100, 60, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+        ctx.strokeStyle = "orange";
+        ctx.lineWidth = 10;
+        ctx.stroke();
+
+        // Sun rays
+        for (let i = 0; i < 12; i++) {
+            let angle = (i * 30 * Math.PI) / 180;
+            let rayLength = 80;
+            let x1 = 100 + Math.cos(angle) * 60;
+            let y1 = 100 + Math.sin(angle) * 60;
+            let x2 = 100 + Math.cos(angle) * (60 + rayLength);
+            let y2 = 100 + Math.sin(angle) * (60 + rayLength);
+
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.strokeStyle = "orange";
+            ctx.lineWidth = 5;
+            ctx.stroke();
+        }
+
+        // Draw a tree with a trunk
+        ctx.beginPath();
+        ctx.moveTo(275, 200);
+        ctx.lineTo(275, 100);
+        ctx.lineTo(300, 100);
+        ctx.lineTo(300, 200);
+        ctx.closePath();
+        ctx.fillStyle = "brown";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(287.5, 100, 25, 0, Math.PI);
+        ctx.fillStyle = "green";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(287.5, 80, 20, 0, Math.PI);
+        ctx.fillStyle = "green";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(287.5, 60, 15, 0, Math.PI);
+        ctx.fillStyle = "green";
+        ctx.fill();
+
+        // Draw a house with a door
+        ctx.beginPath();
+        ctx.moveTo(450, 200);
+        ctx.lineTo(550, 200);
+        ctx.lineTo(550, 100);
+        ctx.lineTo(500, 60);
+        ctx.lineTo(450, 100);
+        ctx.closePath();
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(475, 200);
+        ctx.lineTo(475, 150);
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(525, 200);
+        ctx.lineTo(525, 150);
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        // House door
+        ctx.beginPath();
+        ctx.rect(485, 150, 30, 50);
+        ctx.fillStyle = "brown";
+        ctx.fill();
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        // Draw a flower with circular petals
+        ctx.beginPath();
+        ctx.arc(650, 100, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+
+        // Flower petals
+        for (let i = 0; i < 12; i++) {
+            let angle = (i * 30 * Math.PI) / 180;
+            let petalRadius = 15;
+            let x = 650 + Math.cos(angle) * petalRadius;
+            let y = 100 + Math.sin(angle) * petalRadius;
+
+            ctx.beginPath();
+            ctx.arc(x, y, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = "pink";
+            ctx.fill();
+        }
+    </script>
+</body>
+</html>
